@@ -1,0 +1,30 @@
+{
+  "name": "@artevelde-uas/canvas-lms-bbb-recording-popup-plugin",
+  "description": "Adds buttons to show a BigBlueButton conference recording in a pop-up window",
+  "version": "0.1.0",
+  "keywords": [
+    "Canvas LMS"
+  ],
+  "license": "ISC",
+  "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artevelde-uas/canvas-lms-bbb-recording-popup-plugin.git"
+  },
+  "module": "src/index.js",
+  "files": [
+    "src/"
+  ],
+  "peerDependencies": {
+    "@artevelde-uas/canvas-lms-app": "^1.10.0"
+  },
+  "config": {
+    "scope": {
+      "course": true
+    },
+    "roles": {
+      "teacher": true,
+      "user": true
+    }
+  }
+}
