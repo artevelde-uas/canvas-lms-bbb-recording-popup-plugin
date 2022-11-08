@@ -1,0 +1,24 @@
+{
+    "en": {
+        "watch_video": "Watch video",
+        "video_player": "Video player",
+        "statistics": "Statistics",
+        "statistics_dashboard": "Statistics dashboard",
+        "close": "Close",
+        "package": {
+            "title": "Shows BBB videos and statistics in pop-up",
+            "description": "Shows BigBlueButton videos and statistics in a pop-up. Also adds nicer buttons."
+        }
+    },
+    "nl": {
+        "watch_video": "Bekijk video",
+        "video_player": "Videospeler",
+        "statistics": "Statistieken",
+        "statistics_dashboard": "Statistieken dashbord",
+        "close": "Sluiten",
+        "package": {
+            "title": "Toont BBB video's en statistieken in pop-up",
+            "description": "Toont BigBlueButton video's en statistieken in een pop-up. Voegt ook mooiere knoppen toe."
+        }
+    }
+}

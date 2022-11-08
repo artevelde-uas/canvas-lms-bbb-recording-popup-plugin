@@ -2,20 +2,21 @@ import React from 'react';
 import { EmotionThemeProvider } from '@instructure/emotion';
 import { theme } from '@artevelde-uas/canvas-lms-app';
 
-import Modal from './Modal';
+import VideoModal from './VideoModal';
+import StatsModal from './StatsModal';
 
 
-export default ({ name, statsUrl, videoUrl }) => (
+export default ({ statsUrl, videoUrl, videoName }) => (
     <EmotionThemeProvider theme={theme}>
         {videoUrl && (
             <React.Fragment>
-                <Modal label='Video' title='Video player' url={videoUrl} icon='video' />
+                <VideoModal url={videoUrl} />
                 &nbsp;
             </React.Fragment>
         )}
         {statsUrl && (
             <React.Fragment>
-                <Modal label='Statistics' title='Statistics dashboard' url={statsUrl} icon='stats' />
+                <StatsModal url={statsUrl} />
                 &nbsp;
             </React.Fragment>
         )}

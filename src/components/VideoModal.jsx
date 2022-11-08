@@ -3,46 +3,48 @@ import { Modal } from '@instructure/ui-modal';
 import { CloseButton } from '@instructure/ui-buttons/';
 import { Heading } from '@instructure/ui-heading'
 
+import __ from '../i18n';
 
-export default ({ label, title, url, icon }) => {
+
+export default ({ title, url, icon }) => {
     const [open, setOpen] = useState(false);
 
     return (
         <React.Fragment>
             <span className='ig-button'>
                 <a
-                    className={`btn btn-small icon-${icon}`}
-                    title={title}
+                    className='btn btn-small icon-video'
+                    title={__('video_player')}
                     onClick={() => { setOpen(true) }}
                 >
-                    {label}
+                    {__('watch_video')}
                 </a>
             </span>
             <Modal
                 variant='inverse'
                 open={open}
                 onDismiss={() => { setOpen(false) }}
-                size='medium'
-                label={title}
+                size='large'
+                label={__('video_player')}
                 shouldCloseOnDocumentClick
             >
                 <Modal.Header>
                     <CloseButton
-                        color="primary-inverse"
+                        color='primary-inverse'
                         placement='end'
                         offset='medium'
                         variant='icon'
                         onClick={() => { setOpen(false) }}
-                        screenReaderLabel='Close'
+                        screenReaderLabel={__('close')}
                     >
-                        Close
+                        {__('close')}
                     </CloseButton>
-                    <Heading>{title}</Heading>
+                    <Heading>{__('video_player')}</Heading>
                 </Modal.Header>
                 <Modal.Body padding='none'>
                     <iframe
                         src={url}
-                        allow="fullscreen"
+                        allow='fullscreen'
                         style={{
                             width: '100%',
                             height: '60vh',

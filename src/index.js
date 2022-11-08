@@ -4,13 +4,15 @@ import ReactDOM from 'react-dom';
 
 import Buttons from './components/Buttons';
 
+import __ from './i18n';
+
 
 export default function () {
     router.onRoute('courses.conferences', () => {
         dom.onElementAdded('li.recording', element => {
-            const statsLink = element.querySelector('[href$="/statistics/"]');
-            const videoLink = element.querySelector('[href$="/capture/"]');
-            const name = element.querySelector('.ig-details > span').innerText;
+            const statsLink = element.querySelector('[href*="/statistics/"]');
+            const videoLink = element.querySelector('[href*="/capture/"]');
+            const videoName = element.querySelector('.ig-details > span').innerText;
 
             // Create the container element
             const container = document.createElement('span');
@@ -20,7 +22,7 @@ export default function () {
 
             // Render the component
             ReactDOM.render(React.createElement(Buttons, {
-                name,
+                videoName,
                 statsUrl: statsLink?.href,
                 videoUrl: videoLink?.href
             }), container);
@@ -32,5 +34,9 @@ export default function () {
 
     });
 
-    return require('../package.json');
+    return {
+        ...require('../package.json'),
+        title: __('package.title'),
+        description: __('package.description')
+    };
 }
