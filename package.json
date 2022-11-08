@@ -1,6 +1,6 @@
 {
   "name": "@artevelde-uas/canvas-lms-bbb-recording-popup-plugin",
-  "description": "Adds buttons to show a BigBlueButton conference recording in a pop-up window",
+  "description": "Shows BigBlueButton videos and statistics in a pop-up",
   "version": "0.1.0",
   "keywords": [
     "Canvas LMS"
