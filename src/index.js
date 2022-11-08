@@ -8,8 +8,8 @@ import Buttons from './components/Buttons';
 export default function () {
     router.onRoute('courses.conferences', () => {
         dom.onElementAdded('li.recording', element => {
-            const statsLink = element.querySelector('[href$="/statistics/"]');
-            const videoLink = element.querySelector('[href$="/capture/"]');
+            const statsLink = element.querySelector('[href*="/statistics/"]');
+            const videoLink = element.querySelector('[href*="/capture/"]');
             const videoName = element.querySelector('.ig-details > span').innerText;
 
             // Create the container element
