@@ -1,51 +1,51 @@
 import React, { useState } from 'react';
 import { Modal } from '@instructure/ui-modal';
 import { CloseButton } from '@instructure/ui-buttons/';
-import { Heading } from '@instructure/ui-heading'
+import { Heading } from '@instructure/ui-heading';
 
 
-export default ({ label, title, url, icon }) => {
+export default ({ url }) => {
     const [open, setOpen] = useState(false);
 
     return (
         <React.Fragment>
             <span className='ig-button'>
                 <a
-                    className={`btn btn-small icon-${icon}`}
-                    title={title}
-                    onClick={() => { setOpen(true) }}
+                    className='btn btn-small icon-stats'
+                    title='Statistics dashboard'
+                    onClick={() => { setOpen(true); }}
                 >
-                    {label}
+                    Statistics
                 </a>
             </span>
             <Modal
                 variant='inverse'
                 open={open}
-                onDismiss={() => { setOpen(false) }}
-                size='medium'
-                label={title}
+                onDismiss={() => { setOpen(false); }}
+                size='small'
+                label='Statistics dashboard'
                 shouldCloseOnDocumentClick
             >
                 <Modal.Header>
                     <CloseButton
-                        color="primary-inverse"
+                        color='primary-inverse'
                         placement='end'
                         offset='medium'
                         variant='icon'
-                        onClick={() => { setOpen(false) }}
+                        onClick={() => { setOpen(false); }}
                         screenReaderLabel='Close'
                     >
                         Close
                     </CloseButton>
-                    <Heading>{title}</Heading>
+                    <Heading>Statistics dashboard</Heading>
                 </Modal.Header>
                 <Modal.Body padding='none'>
                     <iframe
                         src={url}
-                        allow="fullscreen"
+                        allow='fullscreen'
                         style={{
                             width: '100%',
-                            height: '60vh',
+                            height: '75vh',
                             border: 'none'
                         }}>
                     </iframe>
