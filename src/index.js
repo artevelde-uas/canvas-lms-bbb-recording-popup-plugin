@@ -10,7 +10,7 @@ export default function () {
         dom.onElementAdded('li.recording', element => {
             const statsLink = element.querySelector('[href$="/statistics/"]');
             const videoLink = element.querySelector('[href$="/capture/"]');
-            const name = element.querySelector('.ig-details > span').innerText;
+            const videoName = element.querySelector('.ig-details > span').innerText;
 
             // Create the container element
             const container = document.createElement('span');
@@ -20,7 +20,7 @@ export default function () {
 
             // Render the component
             ReactDOM.render(React.createElement(Buttons, {
-                name,
+                videoName,
                 statsUrl: statsLink?.href,
                 videoUrl: videoLink?.href
             }), container);

@@ -5,7 +5,7 @@ import { theme } from '@artevelde-uas/canvas-lms-app';
 import Modal from './Modal';
 
 
-export default ({ name, statsUrl, videoUrl }) => (
+export default ({ statsUrl, videoUrl, videoName }) => (
     <EmotionThemeProvider theme={theme}>
         {videoUrl && (
             <React.Fragment>
