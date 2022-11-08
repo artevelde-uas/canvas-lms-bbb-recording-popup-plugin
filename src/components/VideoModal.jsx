@@ -3,6 +3,8 @@ import { Modal } from '@instructure/ui-modal';
 import { CloseButton } from '@instructure/ui-buttons/';
 import { Heading } from '@instructure/ui-heading'
 
+import __ from '../i18n';
+
 
 export default ({ title, url, icon }) => {
     const [open, setOpen] = useState(false);
@@ -12,10 +14,10 @@ export default ({ title, url, icon }) => {
             <span className='ig-button'>
                 <a
                     className='btn btn-small icon-video'
-                    title='Video player'
+                    title={__('video_player')}
                     onClick={() => { setOpen(true) }}
                 >
-                    Video
+                    {__('watch_video')}
                 </a>
             </span>
             <Modal
@@ -23,7 +25,7 @@ export default ({ title, url, icon }) => {
                 open={open}
                 onDismiss={() => { setOpen(false) }}
                 size='large'
-                label='Video player'
+                label={__('video_player')}
                 shouldCloseOnDocumentClick
             >
                 <Modal.Header>
@@ -33,11 +35,11 @@ export default ({ title, url, icon }) => {
                         offset='medium'
                         variant='icon'
                         onClick={() => { setOpen(false) }}
-                        screenReaderLabel='Close'
+                        screenReaderLabel={__('close')}
                     >
-                        Close
+                        {__('close')}
                     </CloseButton>
-                    <Heading>Video player</Heading>
+                    <Heading>{__('video_player')}</Heading>
                 </Modal.Header>
                 <Modal.Body padding='none'>
                     <iframe

@@ -3,6 +3,8 @@ import { Modal } from '@instructure/ui-modal';
 import { CloseButton } from '@instructure/ui-buttons/';
 import { Heading } from '@instructure/ui-heading';
 
+import __ from '../i18n';
+
 
 export default ({ url }) => {
     const [open, setOpen] = useState(false);
@@ -12,10 +14,10 @@ export default ({ url }) => {
             <span className='ig-button'>
                 <a
                     className='btn btn-small icon-stats'
-                    title='Statistics dashboard'
+                    title={__('statistics_dashboard')}
                     onClick={() => { setOpen(true); }}
                 >
-                    Statistics
+                    {__('statistics')}
                 </a>
             </span>
             <Modal
@@ -23,7 +25,7 @@ export default ({ url }) => {
                 open={open}
                 onDismiss={() => { setOpen(false); }}
                 size='small'
-                label='Statistics dashboard'
+                label={__('statistics_dashboard')}
                 shouldCloseOnDocumentClick
             >
                 <Modal.Header>
@@ -33,11 +35,11 @@ export default ({ url }) => {
                         offset='medium'
                         variant='icon'
                         onClick={() => { setOpen(false); }}
-                        screenReaderLabel='Close'
+                        screenReaderLabel={__('close')}
                     >
-                        Close
+                        {__('close')}
                     </CloseButton>
-                    <Heading>Statistics dashboard</Heading>
+                    <Heading>{__('statistics_dashboard')}</Heading>
                 </Modal.Header>
                 <Modal.Body padding='none'>
                     <iframe
