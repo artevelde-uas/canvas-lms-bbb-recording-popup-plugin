@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import Buttons from './components/Buttons';
 
-import __ from './i18n';
+import t from './i18n';
 
 
 export default function () {
@@ -36,7 +36,7 @@ export default function () {
 
     return {
         ...require('../package.json'),
-        title: __('package.title'),
-        description: __('package.description')
+        title: t('package.title'),
+        description: t('package.description')
     };
 }
